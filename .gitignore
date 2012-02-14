@@ -1,0 +1,7 @@
+CMakeFiles
+CMakeScripts
+CMakeCache.txt
+Debug
+libs/sdl-1.3
+GoOpenGL.xcodeproj
+cmake_install.cmake
