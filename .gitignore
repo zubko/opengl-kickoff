@@ -2,6 +2,6 @@ CMakeFiles
 CMakeScripts
 CMakeCache.txt
 Debug
-libs/sdl-1.3
+libs/sdl
 GoOpenGL.xcodeproj
 cmake_install.cmake

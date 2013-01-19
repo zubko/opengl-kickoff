@@ -34,17 +34,17 @@ add_executable(
 # On Windows I am lazy and only look for the
 # release version of SDL, feel free to make this also look for debug
 # modes depending on the cmake build target.
-set(SDL_FOLDER ${CMAKE_CURRENT_SOURCE_DIR}/libs/sdl-1.3
-    CACHE STRING "Path to SDL 1.3" FORCE)
+set(SDL_FOLDER ${CMAKE_CURRENT_SOURCE_DIR}/libs/sdl/build
+    CACHE STRING "Path to SDL" FORCE)
 find_library(SDL_LIBRARY
-    NAMES SDL-1.3.0 SDL
-    PATHS ${SDL_FOLDER}
+    NAMES SDL2-2.0.0 SDL2
+    PATHS ${SDL_FOLDER}/lib
     PATH_SUFFIXES local/lib VisualC/SDL/Release
     NO_DEFAULT_PATH
 )
 find_library(SDLMAIN_LIBRARY
-    NAMES SDLmain
-    PATHS ${SDL_FOLDER}
+    NAMES SDL2main
+    PATHS ${SDL_FOLDER}/lib
     PATH_SUFFIXES local/lib VisualC/SDLmain/Release
     NO_DEFAULT_PATH
 )
@@ -61,7 +61,7 @@ endif()
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include
-    ${SDL_FOLDER}/include
+    ${SDL_FOLDER}/include/SDL2
 )
 
 target_link_libraries(

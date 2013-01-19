@@ -9,31 +9,31 @@ Libraries and Tools
 -------------------
 
 * CMake
-* SDL 1.3
+* SDL 2
 * OpenGL
 
-How-To Build
+How-To Build (Mac OS X)
 ------------
 
-1. Download SDL 1.3 to libs/sdl-1.3:
+#. Download SDL 2 to project's libs folder:
 
     cd libs
-    hg clone http://hg.libsdl.org/SDL sdl-1.3
+    hg clone http://hg.libsdl.org/SDL sdl
 
-2. Apply patch at libs/sdl-1.3-opengl-3.0-patch.diff
+#. Build SDL localy:
 
-3. Build SDL localy:
-
-    cd sdl-1.3
-    ./configure --prefix=`pwd`/local
+    cd sdl
+    mkdir build
+    cd build   
+    ../configure --prefix=`pwd`/../local
     make && make install
 
-4. Generate project:
+#. Generate project:
 
-    OS X:
-    cmake -G Xcode
+    cd `project-dir`
+    cmake -G Xcode .
 
-5. Build and run GoOpenGL target.
+#. Build and run GoOpenGL target.
 
 Acknowledgements
 ----------------
